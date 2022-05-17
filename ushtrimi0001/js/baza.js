@@ -83,4 +83,24 @@ console.log(item.type);
   // });
 // osht e pa perfundume, detir shpie me kry(slektoje tek opcioni jonodejs axios , por zgjedhe javascript:jquery)
  $("#bg-img").append("<img src=''"+ src + "'class='img-custom'/>");
+
+
+//Deferred prop
+ $.dfo=function(){
+ let df=  $.Deferred();
+ let message="Succsess Request";
+ let message1="Fail request";
+ var randomNr=Math.floor(Math.random()*100);
+ if(randomNr % 2 === 0){
+ df.resolve();}
+else{
+ df.reject(message1);}
+ df.resolve();
+ return df;
+};
+$.dfo().done(function(){
+  alert("Succsess request")
+}) .fail(function(err){
+alert(err.message);
+});
 });

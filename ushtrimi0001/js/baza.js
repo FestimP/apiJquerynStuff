@@ -85,6 +85,7 @@ console.log(item.type);
  $("#bg-img").append("<img src=''"+ src + "'class='img-custom'/>");
 
 
+
 //Deferred prop
  $.dfo=function(){
  let df=  $.Deferred();
@@ -103,4 +104,7 @@ $.dfo().done(function(){
 }) .fail(function(err){
 alert(err.message);
 });
+
+
+
 });

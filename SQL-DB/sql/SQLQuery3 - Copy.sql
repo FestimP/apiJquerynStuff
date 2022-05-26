@@ -1,1 +1,0 @@
-select * from Pbc-sus.dbo.profesori  p;

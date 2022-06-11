@@ -39,7 +39,7 @@
 --select * from Users u where u.mosha>@moshaDhene1; 
 --end
 
-
+--------------Start ------
 Declare @kerkesa varchar(20)= 'Shteti';
 if @kerkesa='mosha'
 begin
@@ -88,7 +88,7 @@ else
 begin 
 select * from Users u
 end
-
+--End--
 Select rand();-- random ass numer
 select FLOOR(2.3)--  e skekekton 2shin
 select CEILING(2.3)-- e selekton 3shin

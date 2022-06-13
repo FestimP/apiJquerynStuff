@@ -140,9 +140,40 @@ select *
 into #TempPerson
 from @Person
 select * from #TempPerson
+go
 -- STOCK procedurat jan ma te mira(vs me queryt ) sepse:
 -- stock proceduat ruhen edhe ski nevoj me i deklaru saher qe don me perdor
 -- it is better per response time
 -- metod ma e shpejt(ni her procesohet tana ta shfaq rezultatin)
 -- ma i sigurt,munesh me ba empose restrictions, me e rregullu qasjen,abstrahimi etj etj.
 -- e pamundeson sql injecition 
+CREATE VIEW vGetPagaPunetoreve
+AS
+	SELECT u.Emri, u.Mbimeri, u.mosha AS Mosha, p.Paga, u.roleId as Roli
+	FROM Users u
+	INNER JOIN Pagat p on p.UserId = u.Id
+	WHERE p.Paga > 500
+GO
+
+	SELECT * FROM vGetPagaPunetoreve;
+
+	UPDATE  vGetPagaPunetoreve 
+	SET Emri='Egzona'
+	WHERE Emri='Gezime';
+
+	SELECT *
+	FROM vGetPagaPunetoreve vgp
+	INNER JOIN Roles r ON r.Id = vgp.Roli;
+
+	go
+
+--Detyre
+alter VIEW vGetClassesAndCourses 
+AS
+	SELECT u.Id AS UserId, u.Emri, u.Mbimeri, c.Id AS CourseId, c.kursi, c.klasaId
+	FROM Users u
+	INNER JOIN Courses c on c.Id = u.kursi
+	WHERE c.Emri = 'css'
+GO
+
+SELECT * FROM vGetClassesAndCourses

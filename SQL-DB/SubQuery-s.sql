@@ -150,3 +150,6 @@ where mosha > (select top 1 paga from Pagat)
  select *
  from Users u
  inner join Pagat p on p.userId=u.id
+
+Delete From Pagat
+Where UserId In ( Select Id From Users u where u.mosha > 30)
